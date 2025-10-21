@@ -7,13 +7,15 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 WORKDIR /app
 
 # Copy dependency metadata
-COPY ../../requirements.txt /tmp/requirements.txt
+COPY requirements.txt /tmp/requirements.txt
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
-# Copy the backend source
-COPY . /app
+# Copy the backend source (preserve package folder)
+COPY appfpet001/backend/ /app/backend/
+
+ENV PYTHONPATH=/app
 
 EXPOSE 5000
 
