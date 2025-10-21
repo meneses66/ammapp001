@@ -8,10 +8,10 @@ class Config:
 
     DB_HOST: str = field(
         default_factory=lambda: os.getenv(
-            "DB_HOST", "node244579-fiusapet-clone348010.sp1.br.saveincloud.net.br"
+            "DB_HOST", "node246727-env-6102514.sp1.br.saveincloud.net.br/"
         )
     )
-    DB_PORT: int = field(default_factory=lambda: int(os.getenv("DB_PORT", "14975")))
+    DB_PORT: int = field(default_factory=lambda: int(os.getenv("DB_PORT", "12804")))
     DB_USER: str = field(default_factory=lambda: os.getenv("DB_USER", "amm"))
     DB_PASSWORD: str = field(default_factory=lambda: os.getenv("DB_PASSWORD", "carol+211012"))
     DB_NAME: str = field(default_factory=lambda: os.getenv("DB_NAME", "dbfpet"))
