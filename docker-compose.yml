@@ -1,0 +1,25 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: appfpet001/backend/Dockerfile
+    environment:
+      DB_HOST: "node244579-fiusapet-clone348010.sp1.br.saveincloud.net.br:14975/"
+      DB_NAME: "dbfpet"
+      DB_USER: "amm"
+      DB_PASSWORD: "carol+211012"
+      CORS_ORIGINS: "http://localhost:3000"
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: appfpet001/frontend/Dockerfile
+    environment:
+      API_BASE_URL: "http://backend:5000/api"
+      PORT: "3000"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend

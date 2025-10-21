@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | FPet Gestão</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="login">
+  <main class="login-container">
+    <section class="login-panel">
+      <h1 class="brand">FPet Gestão</h1>
+      <p class="login-description">Acesse com seu login e senha para continuar.</p>
+      <form id="login-form" class="card">
+        <div class="form-field">
+          <label for="login">Login</label>
+          <input id="login" name="login" type="text" maxlength="15" required autocomplete="username">
+        </div>
+        <div class="form-field">
+          <label for="senha">Senha</label>
+          <input id="senha" name="senha" type="password" maxlength="15" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="primary-button full-width">Login</button>
+        <p id="login-error" class="form-error" role="alert" aria-live="assertive"></p>
+      </form>
+    </section>
+  </main>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

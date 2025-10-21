@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | FPet Gestão</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="dashboard">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1 class="brand small">FPet</h1>
+        <button id="toggle-menu" class="icon-button" aria-label="Alternar menu">&#9776;</button>
+      </div>
+      <nav class="menu">
+        <button class="menu-item active" data-menu="usuarios">Usuários</button>
+      </nav>
+    </aside>
+
+    <div class="main-content">
+      <header class="topbar">
+        <div>
+          <h2>Bem-vindo(a)</h2>
+          <p id="current-user" class="muted-text"></p>
+        </div>
+        <div class="topbar-actions">
+          <span id="current-profile" class="tag"></span>
+          <button id="logout-button" class="secondary-button">Sair</button>
+        </div>
+      </header>
+
+      <section id="usuarios-module" class="module active">
+        <div class="module-header">
+          <h2>Usuários</h2>
+          <button id="add-user-button" class="primary-button">Adicionar Usuário</button>
+        </div>
+        <div id="users-feedback" class="form-error" role="alert" aria-live="polite"></div>
+        <div class="card responsive-table">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Usuário</th>
+                <th>Login</th>
+                <th>Senha</th>
+                <th>Perfil</th>
+                <th>Fone</th>
+                <th>Criado em</th>
+                <th class="actions-column">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="users-tbody">
+              <tr>
+                <td colspan="8">Nenhum usuário cadastrado.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div id="modal-backdrop" class="modal-backdrop hidden"></div>
+  <section id="user-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="user-modal-title">
+    <div class="modal-content card">
+      <div class="modal-header">
+        <h3 id="user-modal-title">Usuário</h3>
+        <button id="close-user-modal" class="icon-button" aria-label="Fechar modal">&times;</button>
+      </div>
+      <form id="user-form">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="form-iduser">ID Usuário</label>
+            <input id="form-iduser" name="iduser" type="number" min="1" required>
+          </div>
+          <div class="form-field">
+            <label for="form-usuario">Usuário</label>
+            <input id="form-usuario" name="usuario" type="text" maxlength="50" required>
+          </div>
+          <div class="form-field">
+            <label for="form-login">Login</label>
+            <input id="form-login" name="login" type="text" maxlength="15" required>
+          </div>
+          <div class="form-field">
+            <label for="form-senha">Senha</label>
+            <input id="form-senha" name="senha" type="text" maxlength="15" required>
+          </div>
+          <div class="form-field">
+            <label for="form-perfil">Perfil</label>
+            <input id="form-perfil" name="perfil" type="text" maxlength="20" required>
+          </div>
+          <div class="form-field">
+            <label for="form-fone">Fone</label>
+            <input id="form-fone" name="fone" type="text" maxlength="15">
+          </div>
+          <div class="form-field">
+            <label for="form-data-criado">Data Criado</label>
+            <input id="form-data-criado" name="data_criado" type="datetime-local">
+          </div>
+        </div>
+        <div id="user-form-error" class="form-error" aria-live="assertive"></div>
+        <div class="modal-actions">
+          <button type="button" id="cancel-user" class="secondary-button">Cancelar</button>
+          <button type="submit" class="primary-button">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
